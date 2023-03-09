@@ -43,9 +43,10 @@ class Fusion{
     }
 }
 
+alert("Hola soy una app que te asignara la dieta que elijas por cada dia de la semana. Elige la que mas te guste!!!")
 
 function opciones(){
-let entrada = parseFloat(prompt("Ingrese una opción"))
+let entrada = parseFloat(prompt("Elija alguna dieta:" + "\n" + "\n" + "1- Dieta para obtener energia" + "\n" + "2- Dieta para obtener hierro" + "\n" + "3- Dieta para obtener proteinas"  + "\n" + "\n" + "Si desea finalizar la interacción ingrese 0"))
 while(entrada != "ESC"){
     if (entrada === 1) {
         const dietaCansados = new Fusion(semana,comidaEnergetica);
@@ -84,9 +85,12 @@ while(entrada != "ESC"){
                         alert(iterar.Domingo);
                         break;
 
+                        case "semana":
+                         alert(JSON.stringify(dietaEnergia));    
+
                         case "0":
                         opciones()
-                        break;
+                        return;
 
                      default: ""
                      alert("Ingrese un dia de la semana")
@@ -135,7 +139,7 @@ while(entrada != "ESC"){
                  
                        case "0":
                         opciones()
-                        break;
+                        return;
 
                      default: ""
                      alert("Ingrese un dia de la semana")
@@ -184,7 +188,7 @@ while(entrada != "ESC"){
                  
                        case "0":
                         opciones()
-                        break;
+                        return;
 
                      default: ""
                      alert("Ingrese un dia de la semana")
@@ -194,8 +198,12 @@ while(entrada != "ESC"){
                }      
            });
         break;
+    } else if (entrada === 0) {
+        alert("Interacción finalizada")
+        return;
      }else {
-         entrada = parseFloat(prompt("Ingrese una opción"));
+        alert("Ingrese una opción")
+         entrada = parseFloat(prompt("Elija alguna dieta:" + "\n" + "\n" + "1- Dieta para obtener energia" + "\n" + "2- Dieta para obtener hierro" + "\n" + "3- Dieta para obtener proteinas"  + "\n" + "\n" + "Si desea finalizar la interacción ingrese 0"));
         }
 }
 }  
